@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AmmanVerify • إضافة خبر</title>
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">✓</div>
+        <div>
+          <div style="font-weight:1000">AmmanVerify</div>
+          <div class="small" id="whoami">—</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center">
+        <button class="btn btn-ghost" id="logoutBtn">تسجيل خروج</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout container">
+
+  <aside class="sidebar">
+    <div class="card" style="padding:14px">
+      <div style="font-weight:1000; font-size:16px">المستخدم</div>
+      <div class="small">إرسال الأخبار ومتابعة حالتها</div>
+    </div>
+
+    <nav class="nav" style="margin-top:12px">
+      <a href="home.html">الرئيسية <span class="small">ترحيب</span></a>
+      <a href="submit.html">إضافة خبر <span class="small">إرسال</span></a>
+      <a href="my-news.html">أخباري <span class="small">الحالة</span></a>
+      <a href="verified.html">الأخبار الصحيحة <span class="small">Verified</span></a>
+      <a href="profile.html">الملف <span class="small">معلومات</span></a>
+    </nav>
+  </aside>
+
+    <main class="main">
+      <h1 class="h1">إضافة خبر</h1>
+      <p class="p">املأ البيانات وأرفق ملف (اختياري). سيتم إرسال الخبر للأدمن للمعاينة.</p>
+
+      <div class="card" style="padding:14px">
+        <form id="submitForm">
+          <label class="label">عنوان الخبر</label>
+          <input class="input" id="title" required placeholder="مثال: خبر عن ..."/>
+
+          <label class="label">النص / الوصف</label>
+          <textarea class="textarea" id="body" required placeholder="اكتب تفاصيل الخبر + رابط المصدر إن وجد..."></textarea>
+
+          <label class="label">إرفاق ملف (اختياري): صورة أو PDF أو أي ملف</label>
+          <input class="input" id="file" type="file"/>
+
+          <div style="display:flex; gap:10px; margin-top:14px; align-items:center">
+            <button class="btn btn-primary" type="submit" id="sendBtn">إرسال للمعاينة</button>
+            <span class="small" id="progress"></span>
+          </div>
+        </form>
+      </div>
+
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../assets/js/user-submit.js"></script>
+</body>
+</html>

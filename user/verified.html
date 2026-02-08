@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AmmanVerify • الأخبار الصحيحة</title>
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">✓</div>
+        <div>
+          <div style="font-weight:1000">AmmanVerify</div>
+          <div class="small" id="whoami">—</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center">
+        <button class="btn btn-ghost" id="logoutBtn">تسجيل خروج</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout container">
+
+  <aside class="sidebar">
+    <div class="card" style="padding:14px">
+      <div style="font-weight:1000; font-size:16px">المستخدم</div>
+      <div class="small">إرسال الأخبار ومتابعة حالتها</div>
+    </div>
+
+    <nav class="nav" style="margin-top:12px">
+      <a href="home.html">الرئيسية <span class="small">ترحيب</span></a>
+      <a href="submit.html">إضافة خبر <span class="small">إرسال</span></a>
+      <a href="my-news.html">أخباري <span class="small">الحالة</span></a>
+      <a href="verified.html">الأخبار الصحيحة <span class="small">Verified</span></a>
+      <a href="profile.html">الملف <span class="small">معلومات</span></a>
+    </nav>
+  </aside>
+
+    <main class="main">
+      <h1 class="h1">الأخبار الصحيحة</h1>
+      <p class="p">هنا تظهر الأخبار التي تم اعتمادها “صحيح” (عام)، ويمكنك أيضاً عرض الأخبار الصحيحة التي أرسلتها أنت فقط.</p>
+
+      <div class="card" style="padding:14px; margin-bottom:14px">
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <button class="btn btn-primary" id="tabAll">كل الأخبار الصحيحة</button>
+          <button class="btn btn-ghost" id="tabMine">الأخبار الصحيحة الخاصة بي</button>
+        </div>
+      </div>
+
+      <div class="card" style="padding:14px">
+        <div style="overflow:auto">
+          <table class="table" id="verTable">
+            <thead><tr><th>العنوان</th><th>المرسل</th><th>تاريخ القرار</th><th>ملاحظة</th><th>ملف</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../assets/js/user-verified.js"></script>
+</body>
+</html>

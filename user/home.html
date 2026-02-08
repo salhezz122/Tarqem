@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>AmmanVerify • الرئيسية</title>
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">✓</div>
+        <div>
+          <div style="font-weight:1000">AmmanVerify</div>
+          <div class="small" id="whoami">—</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center">
+        <button class="btn btn-ghost" id="logoutBtn">تسجيل خروج</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout container">
+
+  <aside class="sidebar">
+    <div class="card" style="padding:14px">
+      <div style="font-weight:1000; font-size:16px">المستخدم</div>
+      <div class="small">إرسال الأخبار ومتابعة حالتها</div>
+    </div>
+
+    <nav class="nav" style="margin-top:12px">
+      <a href="home.html">الرئيسية <span class="small">ترحيب</span></a>
+      <a href="submit.html">إضافة خبر <span class="small">إرسال</span></a>
+      <a href="my-news.html">أخباري <span class="small">الحالة</span></a>
+      <a href="verified.html">الأخبار الصحيحة <span class="small">Verified</span></a>
+      <a href="profile.html">الملف <span class="small">معلومات</span></a>
+    </nav>
+  </aside>
+
+    <main class="main">
+      <h1 class="h1" id="hello">أهلاً 👋</h1>
+      <p class="p">هذه واجهتك لإرسال الأخبار إلى فريق التدقيق ومتابعة حالتها.</p>
+
+      <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap:12px; margin-bottom:14px">
+        <div class="kpi"><div class="num" id="kPending">—</div><div class="lbl">قيد المعاينة</div></div>
+        <div class="kpi"><div class="num" id="kTrue">—</div><div class="lbl">أخباري الصحيحة</div></div>
+        <div class="kpi"><div class="num" id="kFalse">—</div><div class="lbl">أخباري الخاطئة</div></div>
+      </div>
+
+      <div class="grid grid-2">
+        <div class="card" style="padding:14px">
+          <div style="font-weight:1000; margin-bottom:8px">إرسال خبر جديد</div>
+          <p class="p">أرسل نص أو أرفق صورة/ملف وسيصل للأدمن فوراً للمعاينة.</p>
+          <a class="btn btn-primary" href="submit.html">إضافة خبر</a>
+        </div>
+
+        <div class="card" style="padding:14px">
+          <div style="font-weight:1000; margin-bottom:8px">نصائح كتابة خبر</div>
+          <ul class="p" style="margin:0; padding-right:18px">
+            <li>أضف رابط المصدر إن وجد.</li>
+            <li>اكتب ملخص واضح بدون مبالغة.</li>
+            <li>إذا فيه صورة/ملف: ارفقه لتسريع التدقيق.</li>
+          </ul>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../assets/js/user-home.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Admin • الأرشيف</title>
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">✓</div>
+        <div>
+          <div style="font-weight:1000">AmmanVerify • Admin</div>
+          <div class="small">لوحة إدارة التدقيق</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center">
+        <button class="btn btn-ghost" id="logoutBtn">تسجيل خروج</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout container">
+
+  <aside class="sidebar">
+    <div class="card" style="padding:14px">
+      <div style="font-weight:1000; font-size:16px">أدوات الأدمن</div>
+      <div class="small">إدارة المستخدمين والأخبار</div>
+    </div>
+
+    <nav class="nav" style="margin-top:12px">
+      <a href="dashboard.html">لوحة الأخبار <span class="small">المعاينة</span></a>
+      <a href="users.html">المستخدمين <span class="small">موافقة</span></a>
+      <a href="archive.html">الأرشيف <span class="small">نتائج</span></a>
+      <a href="settings.html">الإعدادات <span class="small">مشروع</span></a>
+    </nav>
+  </aside>
+
+    <main class="main">
+      <h1 class="h1">الأرشيف</h1>
+      <p class="p">كل الأخبار التي تم اعتمادها (صحيح/خاطئ) مع تاريخ قرار الأدمن.</p>
+
+      <div class="card" style="padding:14px; margin-bottom:14px">
+        <div class="row">
+          <div>
+            <label class="label">فلتر</label>
+            <select class="select" id="filterVerdict">
+              <option value="all">الكل</option>
+              <option value="true">✅ صحيح</option>
+              <option value="false">❌ خاطئ</option>
+            </select>
+          </div>
+          <div>
+            <label class="label">بحث بعنوان</label>
+            <input class="input" id="searchTitle" placeholder="اكتب جزء من العنوان..."/>
+          </div>
+          <div style="display:flex; align-items:flex-end; gap:10px">
+            <button class="btn btn-primary" id="applyBtn">تطبيق</button>
+            <button class="btn btn-ghost" id="resetBtn">مسح</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:14px">
+        <div style="overflow:auto">
+          <table class="table" id="archTable">
+            <thead><tr><th>العنوان</th><th>المرسل</th><th>قرار</th><th>تاريخ القرار</th><th>ملاحظة</th><th>ملف</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../assets/js/admin-archive.js"></script>
+</body>
+</html>

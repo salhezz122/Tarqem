@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Admin • لوحة الأخبار</title>
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">✓</div>
+        <div>
+          <div style="font-weight:1000">AmmanVerify • Admin</div>
+          <div class="small">لوحة إدارة التدقيق</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center">
+        <button class="btn btn-ghost" id="logoutBtn">تسجيل خروج</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout container">
+
+  <aside class="sidebar">
+    <div class="card" style="padding:14px">
+      <div style="font-weight:1000; font-size:16px">أدوات الأدمن</div>
+      <div class="small">إدارة المستخدمين والأخبار</div>
+    </div>
+
+    <nav class="nav" style="margin-top:12px">
+      <a href="dashboard.html">لوحة الأخبار <span class="small">المعاينة</span></a>
+      <a href="users.html">المستخدمين <span class="small">موافقة</span></a>
+      <a href="archive.html">الأرشيف <span class="small">نتائج</span></a>
+      <a href="settings.html">الإعدادات <span class="small">مشروع</span></a>
+    </nav>
+  </aside>
+
+    <main class="main">
+      <h1 class="h1">الأخبار قيد المعاينة</h1>
+      <p class="p">هنا تظهر كل الأخبار التي أرسلها المستخدمون وتحتاج قرار (صحيح/خاطئ) أو تعديل.</p>
+
+      <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap:12px; margin-bottom:14px">
+        <div class="kpi"><div class="num" id="kpiPending">—</div><div class="lbl">قيد المعاينة</div></div>
+        <div class="kpi"><div class="num" id="kpiTrue">—</div><div class="lbl">صحيح (الأرشيف)</div></div>
+        <div class="kpi"><div class="num" id="kpiFalse">—</div><div class="lbl">خاطئ (الأرشيف)</div></div>
+        <div class="kpi"><div class="num" id="kpiUsers">—</div><div class="lbl">مستخدمون نشطون</div></div>
+      </div>
+
+      <div class="card" style="padding:14px">
+        <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+          <div style="font-weight:1000">قائمة الأخبار</div>
+          <button class="btn btn-ghost" id="refreshBtn">تحديث</button>
+        </div>
+        <div style="overflow:auto; margin-top:10px">
+          <table class="table" id="newsTable">
+            <thead>
+              <tr>
+                <th>العنوان</th>
+                <th>المرسل</th>
+                <th>التاريخ</th>
+                <th>الحالة</th>
+                <th>إجراءات</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Edit/Review Modal -->
+      <div id="reviewModal" class="modal-backdrop" aria-hidden="true">
+        <div class="modal">
+          <div style="display:flex; align-items:center; justify-content:space-between; gap:10px">
+            <div style="font-weight:1000; font-size:18px">مراجعة الخبر</div>
+            <button class="btn btn-ghost" id="closeReview">إغلاق</button>
+          </div>
+
+          <div class="small" id="reviewMeta" style="margin-top:8px"></div>
+
+          <label class="label">العنوان</label>
+          <input class="input" id="rvTitle"/>
+
+          <label class="label">النص / الوصف</label>
+          <textarea class="textarea" id="rvBody"></textarea>
+
+          <div id="rvAttachmentBox" class="note" style="display:none; margin-top:10px"></div>
+
+          <label class="label">ملاحظة الأدمن (اختياري)</label>
+          <input class="input" id="rvNote" placeholder="مثال: المصدر غير موثوق..."/>
+
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:14px">
+            <button class="btn btn-success" id="markTrue">اعتماد: صحيح ✅</button>
+            <button class="btn btn-danger" id="markFalse">اعتماد: خاطئ ❌</button>
+            <button class="btn btn-ghost" id="saveOnly">حفظ تعديل فقط</button>
+          </div>
+
+          <p class="small" style="margin-top:10px">أي اعتماد (صحيح/خاطئ) ينقل الخبر تلقائياً للأرشيف مع تاريخ القرار.</p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../assets/js/admin-dashboard.js"></script>
+</body>
+</html>

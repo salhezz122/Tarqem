@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Admin • الإعدادات</title>
+  <link rel="stylesheet" href="../assets/css/styles.css"/>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">✓</div>
+        <div>
+          <div style="font-weight:1000">AmmanVerify • Admin</div>
+          <div class="small">لوحة إدارة التدقيق</div>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center">
+        <button class="btn btn-ghost" id="logoutBtn">تسجيل خروج</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="layout container">
+
+  <aside class="sidebar">
+    <div class="card" style="padding:14px">
+      <div style="font-weight:1000; font-size:16px">أدوات الأدمن</div>
+      <div class="small">إدارة المستخدمين والأخبار</div>
+    </div>
+
+    <nav class="nav" style="margin-top:12px">
+      <a href="dashboard.html">لوحة الأخبار <span class="small">المعاينة</span></a>
+      <a href="users.html">المستخدمين <span class="small">موافقة</span></a>
+      <a href="archive.html">الأرشيف <span class="small">نتائج</span></a>
+      <a href="settings.html">الإعدادات <span class="small">مشروع</span></a>
+    </nav>
+  </aside>
+
+    <main class="main">
+      <h1 class="h1">إعدادات المشروع</h1>
+      <p class="p">هذه الصفحة تذكير سريع بالمطلوب لتشغيل Firebase Security Rules ورفع المشروع على GitHub.</p>
+
+      <div class="grid" style="grid-template-columns:1fr; gap:14px">
+        <div class="card" style="padding:14px">
+          <div style="font-weight:1000">1) ضع إعدادات Firebase</div>
+          <p class="p">افتح الملف: <code>assets/js/firebase.js</code> والصق config الخاص بمشروعك (الموجود في الصورة).</p>
+          <div class="note">
+            بعد ذلك فعّل Authentication (Email/Password) وفعّل Firestore و Storage.
+          </div>
+        </div>
+
+        <div class="card" style="padding:14px">
+          <div style="font-weight:1000">2) قواعد Firestore / Storage المقترحة</div>
+          <p class="p">انسخ القواعد من ملف <code>FIREBASE_RULES.md</code> المرفق داخل المشروع.</p>
+        </div>
+
+        <div class="card" style="padding:14px">
+          <div style="font-weight:1000">3) نشر المشروع</div>
+          <p class="p">يمكنك نشره على GitHub Pages أو Firebase Hosting. الشرح موجود في ملف <code>README.md</code>.</p>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <div id="toast" class="toast"></div>
+  <script type="module" src="../assets/js/admin-settings.js"></script>
+</body>
+</html>
