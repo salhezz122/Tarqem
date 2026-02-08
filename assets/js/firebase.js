@@ -6,14 +6,14 @@ import { getStorage } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-
 /**
  * ⚠️ ضع إعدادات Firebase الخاصة بمشروعك هنا (من صفحة Project settings > Web app > Config)
  */
-export const firebaseConfig = {
-  apiKey: "PUT_YOUR_API_KEY",
-  authDomain: "PUT_YOUR_AUTH_DOMAIN",
-  projectId: "PUT_YOUR_PROJECT_ID",
-  storageBucket: "PUT_YOUR_STORAGE_BUCKET",
-  messagingSenderId: "PUT_YOUR_SENDER_ID",
-  appId: "PUT_YOUR_APP_ID",
-  measurementId: "PUT_YOUR_MEASUREMENT_ID"
+const firebaseConfig = {
+  apiKey: "AIzaSyCtVmD12uHz-JFAcPv5EpwDVKdSvaslzAo",
+  authDomain: "amman-factcheck.firebaseapp.com",
+  projectId: "amman-factcheck",
+  storageBucket: "amman-factcheck.firebasestorage.app",
+  messagingSenderId: "515492556687",
+  appId: "1:515492556687:web:7526dc7b3e0ecc74d2a5fa",
+  measurementId: "G-YZC81SSMDN"
 };
 
 export const app = initializeApp(firebaseConfig);
